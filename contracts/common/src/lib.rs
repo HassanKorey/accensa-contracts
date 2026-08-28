@@ -64,6 +64,10 @@ pub enum Error {
     /// A guarded, external-call-making entry point was re-entered while a
     /// prior invocation of any guarded entry point was still in progress.
     ReentrancyBlocked = 20,
+    /// A refund or withdraw was attempted where the recipient is the contract's own address.
+    SelfTransfer = 21,
+    /// An attempt to change the vault's token address was made while the vault holds a non-zero token balance.
+    FloatNotEmpty = 22,
     /// The requested batch does not exist (or was pruned).
     BatchNotFound = 100,
     /// A batch larger than `MAX_BATCH_SIZE` was submitted.
@@ -72,6 +76,8 @@ pub enum Error {
     /// a wasm-level invocation failure or a value that failed to decode.
     /// Distinct from `BatchNotFound`, which a shard returns deliberately.
     ShardCallFailed = 102,
+    /// An attempt was made to anchor a Merkle root identical to the currently active root.
+    DuplicateRoot = 103,
     /// The supplied Merkle root is not in the historical ring buffer.
     RootNotFound = 200,
     /// The Merkle proof exceeds the maximum valid length (`MAX_PROOF_LEN`).
