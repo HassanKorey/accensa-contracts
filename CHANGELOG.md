@@ -22,6 +22,7 @@ exception: while the project is below `1.0.0`, breaking changes bump the
   rejected with `StrategyNotApproved` at both registration and deployment; and
   that re-approving is idempotent (one revoke clears it). Test-only — no
   contract behavior change.
+- **Documentation (#780):** Documented the public fields of receipt-shard `ShardStats`.
 - **Internal tests (#655, #657):** Pinned the treasury vesting event shapes and the reputation SBT authority gate on `issue`, `revoke` and `slash`.
 - **Documentation (#756, #757, #761, #762):** Documented granular event payload fields and refund-vault APIs.
 - **Documentation (#788, #792):** Documented the five public fields of state-channel `MultiAssetChannel` (`sender`, `receiver`, `phase`, `opened_at`, `challenge_period`) and the five of upto-authorization `AuthorizeEvent` (`payment_id`, `from`, `to`, `cap`, `expiry`) for off-chain decoders; comments only, no code change.
